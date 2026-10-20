@@ -1,0 +1,2 @@
+# killpy-miner
+quantus miner
