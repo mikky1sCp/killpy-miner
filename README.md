@@ -10,7 +10,7 @@ replacement for `quantus-miner serve`; no node-side changes needed.
 
 ## Downloads
 
-Latest release: **[v0.1.0](https://github.com/<ник>/killpy-miner/releases/tag/v0.1.0)**
+Latest release: **[v0.1.0](https://github.com/mikky1sCp/killpy-miner/releases/tag/v0.1.0)**
 
 | Platform | Binary |
 |---|---|
