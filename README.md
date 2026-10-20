@@ -10,7 +10,7 @@ replacement for `quantus-miner serve`; no node-side changes needed.
 
 ## Downloads
 
-Latest release: **[v0.1.0](https://github.com/mikky1sCp/killpy-miner/releases/tag/v0.1.0)**
+Latest release: **[v0.2.0](https://github.com/mikky1sCp/killpy-miner/releases/tag/v0.2.0)**
 
 | Platform | Binary |
 |---|---|
@@ -174,12 +174,12 @@ path is enabled in this release (`simd-poseidon2` feature is a stub upstream).
 
 | GPU | Hashrate | Notes |
 |---|---:|---|
-| RTX 3060 Ti | 68 MH/s | Clore, driver 550.144, 200 W |
-| RTX 3070 | 81 MH/s | Clore, driver 550.144 |
-| RTX 4060 Ti | 79 MH/s | Clore, 100 W cap |
-| RTX 5060 Ti | 105 MH/s | Clore, driver 610.43 |
-| RTX 3080 Ti | **380 MH/s** | Vast, driver 580.173, 330 W |
-| RTX 4090 | **818 MH/s** | Vast, driver 580.159, 350 W |
+| RTX 3060 Ti | 69 MH/s | Clore, driver 550.144, 200 W |
+| RTX 3070 | 82 MH/s | Clore, driver 550.144 |
+| RTX 4060 Ti | 80 MH/s | Clore, 100 W cap |
+| RTX 5060 Ti | 106 MH/s | Clore, driver 610.43 |
+| RTX 3080 Ti | **381 MH/s** | Vast, driver 580.173, 330 W |
+| RTX 4090 | **819 MH/s** | Vast, driver 580.159, 350 W |
 
 These numbers are from the fork's native CUDA kernel after the
 `reduce128` / `__constant__` optimisation pass (PR #100 upstream). The
@@ -189,9 +189,9 @@ baseline `v4.1.1` release was ~30% slower on the same cards.
 
 | GPU | Hashrate | Notes |
 |---|---:|---|
-| RTX 3080 Ti | 106 MH/s | Vast, Vulkan, official `v4.0.2` binary |
-| RTX 5080 | 21 MH/s | Clore, 30 s sample, older kernel |
-| RTX 5060 Ti | 10 MH/s | Clore, older kernel |
+| RTX 3080 Ti | 107 MH/s | Vast, Vulkan, official `v4.0.2` binary |
+| RTX 5080 | 22 MH/s | Clore, 30 s sample, older kernel |
+| RTX 5060 Ti | 11 MH/s | Clore, older kernel |
 
 CUDA is **~3–4× faster than wgpu on the same NVIDIA card**. If you have an
 NVIDIA GPU and can install the CUDA Toolkit, use `--cuda-gpu`.
@@ -275,7 +275,7 @@ at build time. The `wgpu` shaders are embedded in the binary.
 ## Known limitations
 
 - **Windows-only release.** Linux and macOS binaries are not part of
-  `v0.1.0`; build from source if you need them.
+  `v0.2.0`; build from source if you need them.
 - **CUDA `reduce128` skips two carry corrections** per field multiply
   (~1 in 3M nonces hashes wrong on GPU). Every candidate is re-verified on
   CPU, so no invalid blocks are ever produced — but a rare valid nonce may
